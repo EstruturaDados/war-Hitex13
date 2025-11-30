@@ -211,7 +211,7 @@ void exibirMissao(const char* missao) {
     printf("\n--- Sua Missao ---\n%s\n", missao);
 }
 
-/* Libera memória alocada dinamicamente */
+/* Libera memória alocada  */
 void liberarMemoria(Territorio* mapa, char** missoesJogadores, int numJogadores) {
     if (mapa != NULL) free(mapa);
     if (missoesJogadores != NULL) {
@@ -236,7 +236,7 @@ int main(void) {
     };
     int totalMissoes = sizeof(missoesDisponiveis) / sizeof(missoesDisponiveis[0]);
 
-    /* Aloca dinamicamente o mapa de territórios (conforme requisito) */
+    /* Aloca  o mapa de territórios (conforme requisito) */
     Territorio* mapa = (Territorio*) calloc(MaxTerri, sizeof(Territorio));
     if (mapa == NULL) {
         fprintf(stderr, "Erro ao alocar memoria para o mapa.\n");
@@ -262,7 +262,7 @@ int main(void) {
         return 1;
     }
 
-    /* Aloca espaço para cada missão de jogador (armazenamento dinamico) */
+    /* Aloca espaço para cada missão de jogador  */
     for (int i = 0; i < numJogadores; i++) {
         missoesJogadores[i] = (char*) malloc(MAX_MISSAO_LEN);
         if (missoesJogadores[i] == NULL) {
@@ -341,7 +341,7 @@ int main(void) {
                 continue;
             }
             /* valida que atacante é realmente da cor do jogador que o escolheu:
-               vamos pedir ao usuário a cor do jogador que está atacando (simplificação) */
+               a cor do jogador que está atacando  */
             char corDoJogador[10];
             printf("Informe a cor do jogador que esta atacando (ex: Verde): ");
             fgets(corDoJogador, sizeof(corDoJogador), stdin);
@@ -373,3 +373,4 @@ int main(void) {
     return 0;
     //Nota pra alguem que estiver lendo nao sei como fiz isso funcionar mas ta ai E CRL COMO ISSO FICO TAO COMPLEXO E GRANDE
 }
+
