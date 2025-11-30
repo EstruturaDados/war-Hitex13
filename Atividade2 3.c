@@ -147,6 +147,7 @@ int main() {
             printf("Opção inválida!\n");
         }
     }
-
+// perdi 3 anos de vida nisso aqui me passe
     return 0;
 }
+
